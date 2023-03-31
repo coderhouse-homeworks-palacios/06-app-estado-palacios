@@ -2,16 +2,26 @@ export const TASKS = [
   {
     id: 1,
     done: false,
-    title: 'First Task',
+    title: 'This is',
   },
   {
     id: 2,
     done: true,
-    title: 'Second Task',
+    title: 'My improved',
   },
   {
     id: 3,
     done: false,
-    title: 'Third Task',
+    title: 'TO-DO list app',
+  },
+  {
+    id: 4,
+    done: false,
+    title: 'Add DONE action in Redux',
+  },
+  {
+    id: 5,
+    done: false,
+    title: 'Add DELETE action in Redux',
   },
 ];

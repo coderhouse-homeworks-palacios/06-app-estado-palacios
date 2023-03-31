@@ -1,12 +1,27 @@
 import { TASKS } from '../../data/tasks';
+import { TODO_DELETE, TODO_UPDATE } from '../actions/actionTypes';
 
 const initialState = {
   tasks: TASKS,
-  selected: null,
 };
 
 const TaskReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case TODO_DELETE:
+      return { ...state, tasks: state.tasks.filter((task) => task.id !== action.payload) };
+    case TODO_UPDATE:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          return {
+            ...task,
+            done: task.id === action.payload ? !task.done : task.done,
+          };
+        }),
+      };
+    default:
+      return state;
+  }
 };
 
 export default TaskReducer;

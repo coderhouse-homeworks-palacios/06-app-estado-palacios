@@ -7,13 +7,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const MainScreen = () => {
   // const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks.tasks);
-  // console.log(tasks);
 
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>My tasks from Redux</Text>
+      <Text style={styles.title}>Bullet Journal Redux</Text>
       <SafeAreaView style={styles.safeArea}>
-        <FlatList data={tasks} renderItem={({ item }) => <MyTask title={item.title} done={item.done} />} />
+        <FlatList data={tasks} renderItem={({ item }) => <MyTask task={item} />} />
       </SafeAreaView>
     </View>
   );
